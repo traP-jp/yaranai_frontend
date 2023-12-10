@@ -1,0 +1,74 @@
+name: Client
+
+on:
+  push:
+    branches:
+      - 'main'
+  pull_request:
+
+jobs:
+  package:
+    name: Check npm install
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18.15.0'
+          cache: npm
+          cache-dependency-path: ./client/package-lock.json
+      - name: npm ci
+        run: npm ci
+        working-directory: ./client/
+  format:
+    name: Run format
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18.15.0'
+          cache: npm
+          cache-dependency-path: ./client/package-lock.json
+      - name: npm ci
+        run: npm ci
+        working-directory: ./client/
+      - name: Run fmt
+        run: npm run fmt:check
+        working-directory: ./client/
+  lint:
+    name: Run lint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18.15.0'
+          cache: npm
+          cache-dependency-path: ./client/package-lock.json
+      - name: npm ci
+        run: npm ci
+        working-directory: ./client/
+      - name: Run lint
+        run: npm run lint
+        working-directory: ./client/
+  build:
+    name: Run build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18.15.0'
+          cache: npm
+          cache-dependency-path: ./client/package-lock.json
+      - name: npm ci
+        run: npm ci
+        working-directory: ./client/
+      - name: Run build
+        run: npm run build
+        working-directory: ./client/
