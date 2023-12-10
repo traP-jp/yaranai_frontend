@@ -9,11 +9,13 @@
     "preview": "vite preview",
     "build-only": "vite build",
     "type-check": "vue-tsc --build --force",
+    "gen-api": "node docs/generateApi.js",
     "fmt": "prettier --write --ignore-path ./.prettierignore src/",
     "fmt:check": "prettier --check --ignore-path ./.prettierignore src/",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore"
   },
   "dependencies": {
+    "@openapitools/openapi-generator-cli": "^2.7.0",
     "vite-plugin-pwa": "^0.17.4",
     "vue": "^3.3.10",
     "vue-router": "^4.2.5"
