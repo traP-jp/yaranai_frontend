@@ -17,10 +17,10 @@ jobs:
         with:
           node-version: '18.15.0'
           cache: npm
-          cache-dependency-path: ./client/package-lock.json
+          cache-dependency-path: ./package-lock.json
       - name: npm ci
         run: npm ci
-        working-directory: ./client/
+        working-directory: ./
   format:
     name: Run format
     runs-on: ubuntu-latest
@@ -31,13 +31,13 @@ jobs:
         with:
           node-version: '18.15.0'
           cache: npm
-          cache-dependency-path: ./client/package-lock.json
+          cache-dependency-path: ./package-lock.json
       - name: npm ci
         run: npm ci
-        working-directory: ./client/
+        working-directory: ./
       - name: Run fmt
         run: npm run fmt:check
-        working-directory: ./client/
+        working-directory: ./
   lint:
     name: Run lint
     runs-on: ubuntu-latest
@@ -48,13 +48,13 @@ jobs:
         with:
           node-version: '18.15.0'
           cache: npm
-          cache-dependency-path: ./client/package-lock.json
+          cache-dependency-path: ./package-lock.json
       - name: npm ci
         run: npm ci
-        working-directory: ./client/
+        working-directory: ./
       - name: Run lint
         run: npm run lint
-        working-directory: ./client/
+        working-directory: ./
   build:
     name: Run build
     runs-on: ubuntu-latest
@@ -65,10 +65,10 @@ jobs:
         with:
           node-version: '18.15.0'
           cache: npm
-          cache-dependency-path: ./client/package-lock.json
+          cache-dependency-path: ./package-lock.json
       - name: npm ci
         run: npm ci
-        working-directory: ./client/
+        working-directory: ./
       - name: Run build
         run: npm run build
-        working-directory: ./client/
+        working-directory: ./
