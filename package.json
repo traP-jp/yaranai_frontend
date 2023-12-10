@@ -16,6 +16,7 @@
   },
   "dependencies": {
     "@openapitools/openapi-generator-cli": "^2.7.0",
+    "sass": "^1.69.5",
     "vite-plugin-pwa": "^0.17.4",
     "vue": "^3.3.10",
     "vue-router": "^4.2.5",
