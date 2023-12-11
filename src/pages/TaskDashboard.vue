@@ -1,16 +1,47 @@
 <script setup lang="ts">
-import TaskItem from '@/components/TaskItem.vue'
+import TaskList from '@/components/TaskList.vue'
+
+const taskLista: { Id: string; name: string; description: string }[] = [
+  {
+    name: 'aaa',
+    Id: 'aaa',
+    description: 'aaaaaa'
+  },
+  {
+    name: 'aaa',
+    Id: 'avs',
+    description: 'aaaaaa'
+  },
+  {
+    name: 'aaa',
+    Id: 'gsag',
+    description: 'aaaaaa'
+  },
+  {
+    name: 'aaa',
+    Id: 'hdsg',
+    description: 'aaaaaa'
+  }
+]
 </script>
 
 <template>
   <h1>ダッシュボード</h1>
-  <div>
-    <task-item
-      :-id="'100'"
-      :name="'aaa'"
-      :description="'いついつまでに〇〇さんに提出する必要がある'"
-    />
+  <div class="pageContainer">
+    <div>
+      <task-list :title="'こなしやすいタスク'" :task-list="taskLista" />
+    </div>
+    <div>
+      <task-list :title="'ほどほどにこなしやすいタスク'" :task-list="taskLista" />
+    </div>
+    <div>
+      <task-list :title="'こなしにくいタスク'" :task-list="taskLista" />
+    </div>
   </div>
 </template>
 
-<style lang="scss" module></style>
+<style lang="scss" scoped>
+.pageContainer {
+  display: flex;
+}
+</style>
