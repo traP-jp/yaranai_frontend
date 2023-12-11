@@ -1,10 +1,13 @@
 @import './base.scss';
+// GoogleFontsからNoto Sans JPの読み込み
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 #app {
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
   font-weight: normal;
+  font-family: 'Noto Sans JP';
 }
 
 a,
