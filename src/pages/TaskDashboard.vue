@@ -3,19 +3,20 @@ import TaskList from '@/components/TaskList.vue'
 import type { task } from '../apis/generated'
 const taskLista: task[] = [
   {
-    id : 1,
-    title : '電磁気学の課題',
+    id: 1,
+    title: '電磁気学の課題',
     condition: 998244353,
     difficulty: 2,
     dueDate: '2021-10-10',
-    description: 'やる',
-  },{
+    description: 'やる'
+  },
+  {
     id: 2,
     title: '単位認定の申請',
     condition: 5,
     difficulty: 3,
     dueDate: '2021-10-10',
-    description: 'スコアレポートを提出',
+    description: 'スコアレポートを提出'
   }
 ]
 </script>

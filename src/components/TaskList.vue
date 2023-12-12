@@ -10,7 +10,7 @@ const props = defineProps<{
 <template>
   <h1>{{ props.title }}</h1>
   <div v-for="item in props.taskList" :key="item.id">
-    <task-item :cont="item"/>
+    <task-item :cont="item" />
   </div>
 </template>
 

@@ -8,7 +8,7 @@ const props = defineProps<{
 <template>
   <div class="container">
     <div class="title">
-      {{ props.cont.title}}
+      {{ props.cont.title }}
     </div>
     <div class="condition">
       <p class="conditiontext">{{ props.cont.condition }}</p>
@@ -28,17 +28,17 @@ const props = defineProps<{
 }
 .condition {
   display: flex;
-  width:fit-content;
+  width: fit-content;
   height: fit-content;
   flex-direction: column;
   justify-content: center;
   flex-shrink: 0;
   color: #000;
   border-radius: 6px;
-  background: rgba(0, 0, 0, 0.10);
+  background: rgba(0, 0, 0, 0.1);
 }
-.conditiontext{
-  padding:4px;
+.conditiontext {
+  padding: 4px;
   font-family: Inter;
   font-size: 14px;
   font-style: normal;
@@ -57,6 +57,5 @@ const props = defineProps<{
   padding-left: 20px;
   border-radius: 6px;
   border: 1px solid #959595;
-  
 }
 </style>
