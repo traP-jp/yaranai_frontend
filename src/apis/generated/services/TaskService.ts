@@ -59,25 +59,6 @@ export class TaskService {
     }
 
     /**
-     * タスクの詳細を取得
-     * タスクの詳細を取得します。
-     * @param id タスクのID
-     * @returns task 成功
-     * @throws ApiError
-     */
-    public getTaskDetail(
-        id: number,
-    ): CancelablePromise<task> {
-        return this.httpRequest.request({
-            method: 'GET',
-            url: '/task/{id}',
-            path: {
-                'id': id,
-            },
-        });
-    }
-
-    /**
      * タスクを更新
      * タスクを更新します。
      * @param id タスクのID

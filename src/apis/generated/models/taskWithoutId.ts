@@ -9,7 +9,7 @@ export type taskWithoutId = {
     /**
      * タスクが出来る状況の状況ID(デフォルト=いつでもできるタスクは0)
      */
-    possibility: number;
+    condition: number;
     /**
      * 1:気軽にできる, 2: 普通, 3: ハードルが高い
      */
