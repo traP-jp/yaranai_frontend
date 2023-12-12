@@ -1,16 +1,16 @@
 <script setup lang="ts">
 import TaskItem from '@/components/TaskItem.vue'
-
+import type { task } from '../apis/generated'
 const props = defineProps<{
   title: string
-  taskList: { Id: string; name: string; description: string }[]
+  taskList: task[]
 }>()
 </script>
 
 <template>
   <h1>{{ props.title }}</h1>
-  <div v-for="item in props.taskList" :key="item.Id">
-    <task-item :name="item.name" :Id="item.Id" :description="item.description" />
+  <div v-for="item in props.taskList" :key="item.id">
+    <task-item :cont="item"/>
   </div>
 </template>
 
