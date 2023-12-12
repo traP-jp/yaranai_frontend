@@ -7,6 +7,9 @@ const props = defineProps<{
 
 <template>
   <div class="container">
+    <div class="checkmark" onclick="console.log('あとでHTTPリクエストを送る')">
+      ✓
+    </div>
     <div class="title">
       {{ props.cont.title }}
     </div>
@@ -25,6 +28,19 @@ const props = defineProps<{
 <style lang="scss" scoped>
 .title {
   font-size: 18px;
+  width:150px;
+}
+.checkmark {
+  margin:5px;
+  float:right;
+  width:30px;
+  height:30px;
+  text-align: center;
+  border-radius: 50%;
+  /*border: 1px solid rgba(0, 0, 0, 0.3);*/
+}
+.checkmark:hover{
+  background-color: rgba(0, 0, 0, 0.3);
 }
 .condition {
   display: flex;
