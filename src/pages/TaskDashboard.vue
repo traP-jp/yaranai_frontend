@@ -32,21 +32,20 @@ const taskLista: task[] = [
 
 <template>
   <h1>ダッシュボード</h1>
-  <br>
+  <br />
   <h2>Yaranai</h2>
-  <br>
+  <br />
   <div>
-    <div><task-list :title="'おすすめのタスク'" :task-list="taskLista" :filtersignal="1" />
-    </div>  
+    <div><task-list :title="'おすすめのタスク'" :task-list="taskLista" :filtersignal="1" /></div>
     <button v-on="null">やりたくない</button>
   </div>
 
   <div>
     <task-list :title="'未設定項目のあるタスク'" :task-list="taskLista" :filtersignal="1" />
-  </div> 
-  <br>
+  </div>
+  <br />
   <button v-on="null">タスクを追加</button>
-  <br>
+  <br />
   <div class="pageContainer">
     <div>
       <task-list :title="'こなしやすいタスク'" :task-list="taskLista" :filtersignal="1" />
