@@ -11,12 +11,11 @@ const props = defineProps<{
 <template>
   <h1>{{ props.title }}</h1>
   <div v-for="item in props.taskList" :key="item.id">
-    <div v-if="item.difficulty===props.filtersignal">
+    <div v-if="item.difficulty === props.filtersignal">
       <task-item :cont="item" />
     </div>
   </div>
 </template>
-
 
 <style lang="scss" scoped>
 h1 {

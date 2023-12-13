@@ -21,18 +21,17 @@ const taskLista: task[] = [
 ]
 </script>
 
-
 <template>
   <h1>ダッシュボード</h1>
   <div class="pageContainer">
     <div>
-      <task-list :title="'こなしやすいタスク'" :task-list="taskLista" :filtersignal=1 />
+      <task-list :title="'こなしやすいタスク'" :task-list="taskLista" :filtersignal="1" />
     </div>
     <div>
-      <task-list :title="'ほどほどにこなしやすいタスク'" :task-list="taskLista" :filtersignal=2 />
+      <task-list :title="'ほどほどにこなしやすいタスク'" :task-list="taskLista" :filtersignal="2" />
     </div>
     <div>
-      <task-list :title="'こなしにくいタスク'" :task-list="taskLista" :filtersignal=3 />
+      <task-list :title="'こなしにくいタスク'" :task-list="taskLista" :filtersignal="3" />
     </div>
   </div>
 </template>
