@@ -10,15 +10,24 @@ const props = defineProps<{
 
 <template>
   <h1>{{ props.title }}</h1>
-  <div v-for="item in props.taskList" :key="item.id">
+  <h2>
+    <div v-for="item in props.taskList" :key="item.id">
     <div v-if="item.difficulty === props.filtersignal">
       <task-item :cont="item" />
     </div>
-  </div>
+  </div></h2>
+  
+  
 </template>
 
 <style lang="scss" scoped>
 h1 {
   background-color: white;
+}
+h2 {
+  width: 400px;
+  height: 150px;
+  background-color: white;
+  overflow: hidden scroll
 }
 </style>

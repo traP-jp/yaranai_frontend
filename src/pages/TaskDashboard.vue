@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import TaskList from '@/components/TaskList.vue'
 import type { task } from '../apis/generated'
+
 const taskLista: task[] = [
   {
     id: 1,
@@ -17,12 +18,35 @@ const taskLista: task[] = [
     difficulty: 3,
     dueDate: '2021-10-10',
     description: 'スコアレポートを提出'
+  },
+  {
+    id: 3,
+    title: '単位認定の申請',
+    condition: 5,
+    difficulty: 1,
+    dueDate: '2021-10-10',
+    description: 'スコアレポートを提出'
   }
 ]
 </script>
 
 <template>
   <h1>ダッシュボード</h1>
+  <br>
+  <h2>Yaranai</h2>
+  <br>
+  <div>
+    <div><task-list :title="'おすすめのタスク'" :task-list="taskLista" :filtersignal="1" />
+    </div>  
+    <button v-on="null">やりたくない</button>
+  </div>
+
+  <div>
+    <task-list :title="'未設定項目のあるタスク'" :task-list="taskLista" :filtersignal="1" />
+  </div> 
+  <br>
+  <button v-on="null">タスクを追加</button>
+  <br>
   <div class="pageContainer">
     <div>
       <task-list :title="'こなしやすいタスク'" :task-list="taskLista" :filtersignal="1" />
