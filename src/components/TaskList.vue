@@ -9,14 +9,16 @@ const props = defineProps<{
 </script>
 
 <template>
-  <h1>{{ props.title }}</h1>
-  <h2>
-    <div v-for="item in props.taskList" :key="item.id">
-      <div v-if="item.difficulty === props.filterSignal">
-        <task-item :cont="item" />
+  <div>
+    <h1>{{ props.title }}</h1>
+    <h2>
+      <div v-for="item in props.taskList" :key="item.id">
+        <div v-if="item.difficulty === props.filterSignal">
+          <task-item :cont="item" />
+        </div>
       </div>
-    </div>
-  </h2>
+    </h2>
+  </div>
 </template>
 
 <style lang="scss" scoped>
