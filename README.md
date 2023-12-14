@@ -1,5 +1,27 @@
 # yaranai_frontend
 
+ここでの開発に使うコマンドをまとめておきます
+
+- `npm run fmt`
+  - formatを効かせるためのコマンド
+  - これを効かせると他の人もコードが読みやすくなるね、やったね
+- `npm run dev`
+  - 手元環境で実行するためのコード
+  - これを実行したあと、ブラウザで`localhost::5173`にアクセスするとその状態でのページが見られる
+- `npm run build`
+  - ビルドエラーが出ないかを手元で確認するためのコード
+  - 変数の定義・参照などのミスを発見するのに使える
+- `npm run api`
+  - `openapi.yaml`に更新がかかった際に、それをフロントエンドに反映するためのコード
+  - めったに使わない**はず**なので、そんなに使用頻度は高くない
+
+ここまで書いたけど、実はこのコマンドは全部`package.json`の上の方に書いてます
+他のコマンドも確認したかったら見てみてね
+
+---
+
+ここから下は、テンプレのもの
+
 This template should help get you started developing with Vue 3 in Vite.
 
 ## Recommended IDE Setup
