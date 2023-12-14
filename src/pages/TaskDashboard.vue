@@ -40,25 +40,29 @@ apiClient.task.getTasks().then((res) => (taskLista.value = res))
   <h2>Yaranai</h2>
   <br />
   <div>
-    <div><task-list :title="'おすすめのタスク'" :task-list="taskLista" :filtersignal="1" /></div>
+    <div><task-list :title="'おすすめのタスク'" :task-list="taskLista" :filter-signal="1" /></div>
     <button v-on="null">やりたくない</button>
   </div>
 
   <div>
-    <task-list :title="'未設定項目のあるタスク'" :task-list="taskLista" :filtersignal="1" />
+    <task-list :title="'未設定項目のあるタスク'" :task-list="taskLista" :filter-signal="1" />
   </div>
   <br />
   <button v-on="null">タスクを追加</button>
   <br />
   <div class="pageContainer">
     <div>
-      <task-list :title="'こなしやすいタスク'" :task-list="taskLista" :filtersignal="1" />
+      <task-list :title="'こなしやすいタスク'" :task-list="taskLista" :filter-signal="1" />
     </div>
     <div>
-      <task-list :title="'ほどほどにこなしやすいタスク'" :task-list="taskLista" :filtersignal="2" />
+      <task-list
+        :title="'ほどほどにこなしやすいタスク'"
+        :task-list="taskLista"
+        :filter-signal="2"
+      />
     </div>
     <div>
-      <task-list :title="'こなしにくいタスク'" :task-list="taskLista" :filtersignal="3" />
+      <task-list :title="'こなしにくいタスク'" :task-list="taskLista" :filter-signal="3" />
     </div>
   </div>
 </template>
