@@ -1,10 +1,10 @@
 <script setup lang="ts">
 import TaskItem from '@/components/TaskItem.vue'
-import type { task } from '../apis/generated'
+import type { tasks } from '../apis/generated'
 const props = defineProps<{
   title: string
-  taskList: task[]
-  filtersignal: number
+  taskList: tasks
+  filterSignal: number
 }>()
 </script>
 
@@ -12,7 +12,7 @@ const props = defineProps<{
   <h1>{{ props.title }}</h1>
   <h2>
     <div v-for="item in props.taskList" :key="item.id">
-      <div v-if="item.difficulty === props.filtersignal">
+      <div v-if="item.difficulty === props.filterSignal">
         <task-item :cont="item" />
       </div>
     </div>
