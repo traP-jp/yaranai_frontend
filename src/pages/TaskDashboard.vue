@@ -1,8 +1,10 @@
 <script setup lang="ts">
+import { ref } from 'vue'
 import TaskList from '@/components/TaskList.vue'
-import type { task } from '../apis/generated'
+import apiClient from '../apis/index'
+import type { tasks } from '../apis/generated'
 
-const taskLista: task[] = [
+const taskLista = ref<tasks>([
   {
     id: 1,
     title: '電磁気学の課題',
@@ -27,7 +29,9 @@ const taskLista: task[] = [
     dueDate: '2021-10-10',
     description: 'スコアレポートを提出'
   }
-]
+])
+
+apiClient.task.getTasks().then((res) => (taskLista.value = res))
 </script>
 
 <template>
