@@ -21,13 +21,17 @@ const sendNewTask = () => {
 </script>
 
 <template>
-  <div>
-    <h2>新しいタスクを追加する</h2>
+  <v-card>
+    <v-card-title>新しいタスクを追加する</v-card-title>
     <div>
       <p>タスク名</p>
+      <v-text-field label="タスク名をここに入力" v-model="newTask.title"></v-text-field>
     </div>
     <div>
       <p>概要</p>
+      <v-col cols="8">
+        <v-text-field label="概要をここに入力" v-model="newTask.description"></v-text-field>
+      </v-col>
     </div>
     <div>
       <p>ハードル</p>
@@ -39,8 +43,8 @@ const sendNewTask = () => {
     <div>
       <p>締め切り</p>
     </div>
-    <v-btn @click="sendNewTask">送信する</v-btn>
-  </div>
+    <button @click="sendNewTask">送信する</button>
+  </v-card>
 </template>
 
 <style lang="scss" scoped></style>
