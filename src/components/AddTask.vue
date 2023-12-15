@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import apiClient from '@/apis'
-import type { conditions, taskWithoutId } from '@/apis/generated'
+import type { condition, conditions, taskWithoutId } from '@/apis/generated'
 import { ref } from 'vue'
 
 const newTask = ref<taskWithoutId>({
@@ -11,7 +11,14 @@ const newTask = ref<taskWithoutId>({
   dueDate: ''
 })
 
-const conditionList = ref<conditions>([])
+const conditionList = ref<conditions>([
+  { id: 0, name: 'aaa' },
+  { id: 1, name: 'ddd' },
+  { id: 2, name: 'fff' },
+  { id: 3, name: 'aaggga' },
+  { id: 4, name: 'aahha' },
+  { id: 5, name: 'aaja' }
+])
 
 apiClient.condition.getConditions().then((res) => (conditionList.value = res))
 
@@ -21,29 +28,37 @@ const sendNewTask = () => {
 </script>
 
 <template>
-  <v-card>
+  <v-card width="60vw">
     <v-card-title>新しいタスクを追加する</v-card-title>
     <div>
-      <p>タスク名</p>
-      <v-text-field label="タスク名をここに入力" v-model="newTask.title"></v-text-field>
+      <v-text-field
+        label="タスク名"
+        placeholder="タスク名をここに入力"
+        :v-model="newTask.title"
+      ></v-text-field>
     </div>
     <div>
-      <p>概要</p>
-      <v-col cols="8">
-        <v-text-field label="概要をここに入力" v-model="newTask.description"></v-text-field>
-      </v-col>
+      <v-text-field
+        label="概要"
+        placeholder="概要をここに入力"
+        :v-model="newTask.description"
+      ></v-text-field>
     </div>
     <div>
       <p>ハードル</p>
     </div>
     <div>
-      <p>状況</p>
-      <span v-for="item in conditionList" :key="item.id"> <v-btn />{{ item.name }} </span>
+      <v-radio-group type="a" label="状況" v-model="newTask.condition">
+        選択中の状況：{{ newTask.condition }}
+        <span v-for="item in conditionList" :key="item.id">
+          <v-radio :label="`${item.name}`" color="black" :multiple="false" :value="item.id" />
+        </span>
+      </v-radio-group>
     </div>
     <div>
       <p>締め切り</p>
     </div>
-    <button @click="sendNewTask">送信する</button>
+    <v-btn @click="sendNewTask">送信する</v-btn>
   </v-card>
 </template>
 
