@@ -33,7 +33,9 @@ export class ConditionService {
      * @throws ApiError
      */
     public postCondition(
-        requestBody: string,
+        requestBody: {
+            name: string;
+        },
     ): CancelablePromise<number> {
         return this.httpRequest.request({
             method: 'POST',
@@ -53,7 +55,9 @@ export class ConditionService {
      */
     public putCondition(
         id: number,
-        requestBody: string,
+        requestBody: {
+            name: string;
+        },
     ): CancelablePromise<condition> {
         return this.httpRequest.request({
             method: 'PUT',
