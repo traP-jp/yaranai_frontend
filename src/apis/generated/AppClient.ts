@@ -23,7 +23,7 @@ export class AppClient {
     constructor(config?: Partial<OpenAPIConfig>, HttpRequest: HttpRequestConstructor = FetchHttpRequest) {
         this.request = new HttpRequest({
             BASE: config?.BASE ?? 'https://yaranai.trap.show/api',
-            VERSION: config?.VERSION ?? '0.0.4',
+            VERSION: config?.VERSION ?? '0.0.5',
             WITH_CREDENTIALS: config?.WITH_CREDENTIALS ?? false,
             CREDENTIALS: config?.CREDENTIALS ?? 'include',
             TOKEN: config?.TOKEN,
