@@ -6,27 +6,45 @@ const props = defineProps<{
   taskList: tasks
   filterSignal: number
 }>()
+
+
 </script>
 
 <template>
   <h1>{{ props.title }}</h1>
-  <h2>
+  <div class ="verticalScroll">
     <div v-for="item in props.taskList" :key="item.id">
       <div v-if="item.difficulty === props.filterSignal">
         <task-item :cont="item" />
       </div>
     </div>
-  </h2>
+  </div>
+
 </template>
 
 <style lang="scss" scoped>
 h1 {
   background-color: white;
 }
-h2 {
-  width: 400px;
+.horizonScroll{
+  width: 300px;
   height: 150px;
   background-color: white;
-  overflow: hidden scroll;
+  overflow-y: hidden;
+}
+.verticalScroll{
+  width: 400px;
+  height: 200px;
+  background-color: white;
+  overflow-x: hidden ;
+}
+
+h1 {
+  color: #000;
+font-family: Noto Sans;
+font-size: 30px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
 }
 </style>
