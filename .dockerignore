@@ -1,0 +1,18 @@
+# Dockerイメージやコンテナを作るにあたって不要なファイルをCOPYコマンドの対象外とする
+
+# README.md
+README.md
+
+.git/
+.gitignore
+**/.DS_Store
+.dockerignore
+Dockerfile
+# compose.yaml
+
+dist/
+dev-dist/
+node-modules/
+.github/
+.vscode/
+.prettierignore
