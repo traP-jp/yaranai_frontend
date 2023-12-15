@@ -9,6 +9,7 @@ export default defineConfig({
   plugins: [
     vue(),
     VitePWA({
+      registerType: 'autoUpdate',
       manifest: {
         name: 'yaranai',
         short_name: 'yaranai',
@@ -20,9 +21,10 @@ export default defineConfig({
         theme_color: '#916028',
         lang: 'ja'
       },
+      workbox: { cleanupOutdatedCaches: true },
       includeAssets: [],
       devOptions: {
-        enabled: true
+        enabled: false
       }
     })
   ],
