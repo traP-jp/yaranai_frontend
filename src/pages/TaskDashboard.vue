@@ -1,16 +1,69 @@
 <script setup lang="ts">
-import TaskItem from '@/components/TaskItem.vue'
+import { ref } from 'vue'
+import TaskList from '@/components/TaskList.vue'
+import apiClient from '../apis/index'
+import type { tasks } from '../apis/generated'
+
+const taskLista = ref<tasks>([
+  {
+    id: 1,
+    title: '電磁気学の課題',
+    condition: 998244353,
+    difficulty: 2,
+    dueDate: '2021-10-10',
+    description: 'やる'
+  },
+  {
+    id: 2,
+    title: '単位認定の申請',
+    condition: 5,
+    difficulty: 3,
+    dueDate: '2021-10-10',
+    description: 'スコアレポートを提出'
+  },
+  {
+    id: 3,
+    title: '単位認定の申請',
+    condition: 5,
+    difficulty: 1,
+    dueDate: '2021-10-10',
+    description: 'スコアレポートを提出'
+  }
+])
+
+apiClient.task.getTasks().then((res) => (taskLista.value = res))
 </script>
 
 <template>
-  <h1>ダッシュボード</h1>
   <div>
-    <task-item
-      :-id="'100'"
-      :name="'aaa'"
-      :description="'いついつまでに〇〇さんに提出する必要がある'"
-    />
+    <h1>ダッシュボード</h1>
+    <!-- <br /> -->
+    <h2>Yaranai</h2>
+    <!-- <br /> -->
+    <div>
+      <task-list :title="'おすすめのタスク'" :task-list="taskLista" :filter-signal="1" />
+      <button v-on="null">やりたくない</button>
+    </div>
+    <task-list :title="'未設定項目のあるタスク'" :task-list="taskLista" :filter-signal="1" />
+    <!-- <br /> -->
+    <div>
+      <button v-on="null">タスクを追加</button>
+      <!-- <br /> -->
+      <div class="pageContainer">
+        <task-list :title="'こなしやすいタスク'" :task-list="taskLista" :filter-signal="1" />
+        <task-list
+          :title="'ほどほどにこなしやすいタスク'"
+          :task-list="taskLista"
+          :filter-signal="2"
+        />
+        <task-list :title="'こなしにくいタスク'" :task-list="taskLista" :filter-signal="3" />
+      </div>
+    </div>
   </div>
 </template>
 
-<style lang="scss" module></style>
+<style lang="scss" scoped>
+.pageContainer {
+  display: flex;
+}
+</style>
