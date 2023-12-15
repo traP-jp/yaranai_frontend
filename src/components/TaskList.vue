@@ -12,9 +12,11 @@ const props = defineProps<{
   <div>
     <h1>{{ props.title }}</h1>
     <h2>
-      <div v-for="item in props.taskList" :key="item.id">
-        <div v-if="item.difficulty === props.filterSignal">
-          <task-item :cont="item" />
+      <div class="verticalScroll">
+        <div v-for="item in props.taskList" :key="item.id">
+          <div v-if="item.difficulty === props.filterSignal">
+            <task-item :cont="item" />
+          </div>
         </div>
       </div>
     </h2>
@@ -22,8 +24,24 @@ const props = defineProps<{
 </template>
 
 <style lang="scss" scoped>
+.horizonScroll {
+  width: 300px;
+  height: 150px;
+  background-color: white;
+  overflow-y: hidden;
+}
+.verticalScroll {
+  width: 500px;
+  height: 460px;
+  background-color: white;
+  overflow-x: hidden;
+}
 h1 {
   background-color: white;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
 }
 h2 {
   width: 400px;

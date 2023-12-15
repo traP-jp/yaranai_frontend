@@ -66,10 +66,11 @@ const props = defineProps<{
   border: 5px;
   box-shadow: 5px;
   background-color: white;
-  border-radius: 10px;
   padding: auto;
   padding-left: 20px;
   border-radius: 6px;
-  border: 1px solid #959595;
+  border: 3px solid #000;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  margin: 3px;
 }
 </style>
