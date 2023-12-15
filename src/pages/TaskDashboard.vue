@@ -186,7 +186,6 @@ apiClient.suggestion.getSuggest('3').then((res) => (suggest.value = res))
 
 h2 {
   color: #000;
-  font-family: Noto Sans;
   font-size: 90px;
   font-style: normal;
   font-weight: 700;

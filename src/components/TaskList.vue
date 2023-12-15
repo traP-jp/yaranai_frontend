@@ -38,7 +38,6 @@ const props = defineProps<{
 }
 h1 {
   background-color: white;
-  font-family: Noto Sans;
   font-size: 30px;
   font-style: normal;
   font-weight: 700;
