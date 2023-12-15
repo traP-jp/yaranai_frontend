@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import apiClient from '@/apis'
-import type { condition, conditions, taskWithoutId } from '@/apis/generated'
+import type { conditions, taskWithoutId } from '@/apis/generated'
 import { ref } from 'vue'
 
 const newTask = ref<taskWithoutId>({
