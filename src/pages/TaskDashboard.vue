@@ -34,7 +34,7 @@ const taskLista = ref<tasks>([
 const suggest = ref<tasks>([])
 
 apiClient.task.getTasks().then((res) => (taskLista.value = res))
-apiClient.suggestion.getSuggest("3").then((res) => (suggest.value = res))
+apiClient.suggestion.getSuggest('3').then((res) => (suggest.value = res))
 </script>
 
 <template>
