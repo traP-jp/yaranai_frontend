@@ -31,7 +31,10 @@ const taskLista = ref<tasks>([
   }
 ])
 
+const suggest = ref<tasks>([])
+
 apiClient.task.getTasks().then((res) => (taskLista.value = res))
+apiClient.suggestion.getSuggest("3").then((res) => (suggest.value = res))
 </script>
 
 <template>
@@ -41,7 +44,7 @@ apiClient.task.getTasks().then((res) => (taskLista.value = res))
     <h2>Yaranai</h2>
     <!-- <br /> -->
     <div>
-      <task-list :title="'おすすめのタスク'" :task-list="taskLista" :filter-signal="1" />
+      <task-list :title="'おすすめのタスク'" :task-list="suggest" :filter-signal="1" />
       <button v-on="null">やりたくない</button>
     </div>
     <task-list :title="'未設定項目のあるタスク'" :task-list="taskLista" :filter-signal="1" />
