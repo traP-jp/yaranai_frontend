@@ -58,15 +58,14 @@ h1 {
   }
 }
 
-::-webkit-scrollbar{
-   width: 7px;
+::-webkit-scrollbar {
+  width: 7px;
 }
-::-webkit-scrollbar-track{
-   background-color: #ccc;
+::-webkit-scrollbar-track {
+  background-color: #ccc;
 }
-::-webkit-scrollbar-thumb{
-   background-color: gray;
-   border-radius: 7px;
+::-webkit-scrollbar-thumb {
+  background-color: gray;
+  border-radius: 7px;
 }
-
 </style>

@@ -310,8 +310,7 @@ apiClient.suggestion.getSuggest('3').then((res) => (suggest.value = res))
 <style lang="scss" scoped>
 .pageContainer {
   display: flex;
-  justify-content:space-between
-  
+  justify-content: space-between;
 }
 
 h1 {
