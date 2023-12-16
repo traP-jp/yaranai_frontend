@@ -133,7 +133,12 @@ apiClient.suggestion.getSuggest('3').then((res) => (suggest.value = res))
           </clipPath>
         </defs>
       </svg>
-      <task-list :title="'おすすめのタスク'" :task-list="suggest" :filter-signal="1" />
+      <task-list
+        :title="'おすすめのタスク'"
+        :task-list="suggest"
+        :difficulty="1"
+        :horizontal-scroll="true"
+      />
       <br />
       <v-btn>やりたくない</v-btn>
     </div>
@@ -166,7 +171,12 @@ apiClient.suggestion.getSuggest('3').then((res) => (suggest.value = res))
           </clipPath>
         </defs>
       </svg>
-      <task-list :title="'未設定項目のあるタスク'" :task-list="taskLista" :filter-signal="1" />
+      <task-list
+        :title="'未設定項目のあるタスク'"
+        :task-list="taskLista"
+        :difficulty="1"
+        :horizontal-scroll="true"
+      />
       <!-- <br /> -->
       <br />
     </div>
@@ -174,13 +184,28 @@ apiClient.suggestion.getSuggest('3').then((res) => (suggest.value = res))
     <!-- <br /> -->
     <div class="pageContainer">
       <div>
-        <task-list :title="'ハードルが低い'" :task-list="taskLista" :filter-signal="1" />
+        <task-list
+          :title="'ハードルが低い'"
+          :task-list="taskLista"
+          :difficulty="1"
+          :horizontal-scroll="false"
+        />
       </div>
       <div>
-        <task-list :title="'ハードルが普通'" :task-list="taskLista" :filter-signal="2" />
+        <task-list
+          :title="'ハードルが普通'"
+          :task-list="taskLista"
+          :difficulty="2"
+          :horizontal-scroll="false"
+        />
       </div>
       <div>
-        <task-list :title="'ハードルが高い'" :task-list="taskLista" :filter-signal="3" />
+        <task-list
+          :title="'ハードルが高い'"
+          :task-list="taskLista"
+          :difficulty="3"
+          :horizontal-scroll="false"
+        />
       </div>
     </div>
   </div>
