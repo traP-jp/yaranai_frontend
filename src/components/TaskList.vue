@@ -15,7 +15,7 @@ const props = defineProps<{
       <div>
         <div v-for="item in props.taskList" :key="item.id">
           <div v-if="item.difficulty === props.filterSignal">
-            <task-item :cont="item" />    
+            <task-item :cont="item" />
           </div>
         </div>
       </div>
