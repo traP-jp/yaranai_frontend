@@ -103,7 +103,104 @@ const taskLista = ref<tasks>([
   }
 ])
 
-const suggest = ref<tasks>([])
+const suggest = ref<tasks>([
+  {
+    id: 1,
+    title: '電磁気学の課題',
+    condition: 998244353,
+    difficulty: 2,
+    dueDate: '2021-10-10',
+    description: 'やる'
+  },
+  {
+    id: 2,
+    title: '単位認定の申請',
+    condition: 5,
+    difficulty: 3,
+    dueDate: '2021-10-10',
+    description: 'スコアレポートを提出'
+  },
+  {
+    id: 3,
+    title: '単位認定の申請',
+    condition: 5,
+    difficulty: 1,
+    dueDate: '2021-10-10',
+    description: 'スコアレポートを提出'
+  },
+  {
+    id: 1,
+    title: '電磁気学の課題',
+    condition: 998244353,
+    difficulty: 2,
+    dueDate: '2021-10-10',
+    description: 'やる'
+  },
+  {
+    id: 2,
+    title: '単位認定の申請',
+    condition: 5,
+    difficulty: 3,
+    dueDate: '2021-10-10',
+    description: 'スコアレポートを提出'
+  },
+  {
+    id: 3,
+    title: '単位認定の申請',
+    condition: 5,
+    difficulty: 1,
+    dueDate: '2021-10-10',
+    description: 'スコアレポートを提出'
+  },
+  {
+    id: 1,
+    title: '電磁気学の課題',
+    condition: 998244353,
+    difficulty: 2,
+    dueDate: '2021-10-10',
+    description: 'やる'
+  },
+  {
+    id: 2,
+    title: '単位認定の申請',
+    condition: 5,
+    difficulty: 3,
+    dueDate: '2021-10-10',
+    description: 'スコアレポートを提出'
+  },
+  {
+    id: 3,
+    title: '単位認定の申請',
+    condition: 5,
+    difficulty: 1,
+    dueDate: '2021-10-10',
+    description: 'スコアレポートを提出'
+  },
+  {
+    id: 1,
+    title: '電磁気学の課題',
+    condition: 998244353,
+    difficulty: 2,
+    dueDate: '2021-10-10',
+    description: 'やる'
+  },
+  {
+    id: 2,
+    title: '単位認定の申請',
+    condition: 5,
+    difficulty: 3,
+    dueDate: '2021-10-10',
+    description: 'スコアレポートを提出'
+  },
+  {
+    id: 3,
+    title: '単位認定の申請',
+    condition: 5,
+    difficulty: 1,
+    dueDate: '2021-10-10',
+    description: 'スコアレポートを提出'
+  }
+])
 
 apiClient.task.getTasks().then((res) => (taskLista.value = res))
 apiClient.suggestion.getSuggest('3').then((res) => (suggest.value = res))
