@@ -21,7 +21,7 @@ export default defineConfig({
         theme_color: '#916028',
         lang: 'ja'
       },
-      workbox: { cleanupOutdatedCaches: true },
+      workbox: { cleanupOutdatedCaches: true, globPatterns: ['**/*.{js,css,html,ico,png,svg}'] },
       includeAssets: [],
       devOptions: {
         enabled: false

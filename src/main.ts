@@ -22,9 +22,10 @@ const intervalMS = 60 * 60 * 1000
 
 const updateServiceWorker = useRegisterSW({
   onRegistered(r) {
-    r && setInterval(()=>{
-      r.update()
-    },intervalMS)     
+    r &&
+      setInterval(() => {
+        r.update()
+      }, intervalMS)
   },
   onOfflineReady() {}
 })
