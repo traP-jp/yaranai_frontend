@@ -17,12 +17,12 @@ export default defineConfig({
         icons: [], // あとで追加します
         start_url: 'index.html',
         display: 'standalone', // デフォルトなので不要
-        background_color: '#BD913F',
-        theme_color: '#916028',
+        background_color: '#ffffff',
+        theme_color: '#ffffff',
         lang: 'ja'
       },
       workbox: { cleanupOutdatedCaches: true, globPatterns: ['**/*.{js,css,html,ico,png,svg}'] },
-      includeAssets: [],
+      includeAssets: ["favicon.ico, 'logo.svg"],
       devOptions: {
         enabled: false
       }
