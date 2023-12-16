@@ -113,7 +113,7 @@ apiClient.suggestion.getSuggest('3').then((res) => (suggest.value = res))
   <div>
     <h2>Yaranai</h2>
     <!-- <br /> -->
-    <div>
+    <div class="pageContainer">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="42"
@@ -138,6 +138,7 @@ apiClient.suggestion.getSuggest('3').then((res) => (suggest.value = res))
       <v-btn>やりたくない</v-btn>
     </div>
     <br />
+    <div class="pageContainer">
     <svg xmlns="http://www.w3.org/2000/svg" width="41" height="41" viewBox="0 0 41 41" fill="none">
       <g clip-path="url(#clip0_211_248)">
         <path
@@ -162,7 +163,7 @@ apiClient.suggestion.getSuggest('3').then((res) => (suggest.value = res))
     <task-list :title="'未設定項目のあるタスク'" :task-list="taskLista" :filter-signal="1" />
     <!-- <br /> -->
     <br />
-
+    </div>
     <v-btn>タスクを追加</v-btn>
     <!-- <br /> -->
     <div class="pageContainer">
