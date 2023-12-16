@@ -208,7 +208,7 @@ apiClient.suggestion.getSuggest('3').then((res) => (suggest.value = res))
 
 <template>
   <div>
-    <h2>Yaranai</h2>
+    <h1>Yaranai</h1>
     <!-- <br /> -->
     <div class="pageContainer">
       <svg
@@ -314,10 +314,10 @@ apiClient.suggestion.getSuggest('3').then((res) => (suggest.value = res))
 }
 
 h2 {
-  color: #000;
-  font-size: 90px;
-  font-style: normal;
-  font-weight: 700;
+  //color: #000;
+  //font-size: 90px;
+  //font-style: normal;
+  //font-weight: 700;
   line-height: normal;
 }
 
