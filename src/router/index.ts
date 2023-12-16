@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import TaskDashboard from '@/pages/TaskDashboard.vue'
 import AddTask from '@/components/AddTask.vue'
+import AddCondition from '@/components/AddCondition.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -11,9 +12,14 @@ const router = createRouter({
       component: TaskDashboard
     },
     {
-      path: '/Add',
+      path: '/AddTask',
       name: 'タスクの追加',
       component: AddTask
+    },
+    {
+      path: '/AddCondition',
+      name: '状況の追加',
+      component: AddCondition
     }
   ]
 })
