@@ -37,9 +37,7 @@ const props = defineProps<{
 // }
 h1 {
   background-color: white;
-  font-size: 30px;
   font-style: normal;
-  font-weight: 700;
   line-height: normal;
 }
 .listContainer {

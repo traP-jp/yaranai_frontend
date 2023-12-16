@@ -6,8 +6,11 @@
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
-  font-weight: normal;
-  font-family: 'Noto Sans JP';
+  font: {
+    family: 'Noto Sans JP';
+    // font-sizeに上限と下限を設定した上で可変に
+    size: clamp(14px, 1.5vw, 18px);
+  }
 }
 
 a,
@@ -34,5 +37,64 @@ a,
     display: grid;
     grid-template-columns: 1fr 1fr;
     padding: 0 2rem;
+  }
+}
+
+h1 {
+  font: {
+    weight: 900;
+    size: 2rem;
+  }
+  // margin-bottom: 10px;
+  padding: 1%;
+}
+
+h2 {
+  font: {
+    weight: 800;
+    size: 1.75rem;
+  }
+  padding: {
+    top: 0.5%;
+    bottom: 0.5%;
+  }
+}
+h3,
+.h3 {
+  color: inherit;
+  font: {
+    weight: 800;
+    size: 1.5rem;
+  }
+  padding: {
+    top: 0.5%;
+    bottom: 0.5%;
+  }
+}
+h4,
+.h4 {
+  color: inherit;
+  font: {
+    weight: 700;
+    size: 1.25rem;
+  }
+}
+h5 {
+  font: {
+    weight: 600;
+    size: 1rem;
+  }
+}
+h6 {
+  font: {
+    weight: 500;
+    size: 1rem;
+  }
+}
+
+p {
+  font: {
+    weight: 400;
+    size: 1rem;
   }
 }
