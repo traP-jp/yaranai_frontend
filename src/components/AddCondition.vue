@@ -29,9 +29,15 @@ const sendContinuingPost = () => {
         v-model="conditionReq.name"
       />
     </div>
-    <v-btn @click="sendBackToDashboard">送信してダッシュボードにもどる</v-btn>
-    <v-btn @click="sendContinuingPost">送信し、このまま登録を続ける</v-btn>
+    <div class="pageContainer">
+      <v-btn @click="sendBackToDashboard">送信してダッシュボードにもどる</v-btn>
+      <v-btn @click="sendContinuingPost">送信し、このまま登録を続ける</v-btn>
+    </div>
   </v-card>
 </template>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.pageContainer {
+  display: flex;
+}
+</style>
