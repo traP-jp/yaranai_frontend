@@ -39,7 +39,7 @@ export interface PWAIntegration {
   closeBundleOrder?: 'pre' | 'post' | null
   configureOptions?: (
     viteOptions: ResolvedConfig,
-    options: Partial<VitePWAOptions>,
+    options: Partial<VitePWAOptions>
   ) => void | Promise<void>
 }
 
@@ -212,7 +212,11 @@ export interface ShareTargetFiles {
 /**
  * @see https://developer.mozilla.org/en-US/docs/Web/Manifest/launch_handler#launch_handler_item_values
  */
-export type LaunchHandlerClientMode = 'auto' | 'focus-existing' | 'navigate-existing' | 'navigate-new'
+export type LaunchHandlerClientMode =
+  | 'auto'
+  | 'focus-existing'
+  | 'navigate-existing'
+  | 'navigate-new'
 
 export type Display = 'fullscreen' | 'standalone' | 'minimal-ui' | 'browser'
 export type DisplayOverride = Display | 'window-controls-overlay'
@@ -283,7 +287,15 @@ export interface ManifestOptions {
   /**
    * Defines the default orientation for all the website's top-level
    */
-  orientation: 'any' | 'natural' | 'landscape' | 'landscape-primary' | 'landscape-secondary' | 'portrait' | 'portrait-primary' | 'portrait-secondary'
+  orientation:
+    | 'any'
+    | 'natural'
+    | 'landscape'
+    | 'landscape-primary'
+    | 'landscape-secondary'
+    | 'portrait'
+    | 'portrait-primary'
+    | 'portrait-secondary'
   /**
    * @default `standalone`
    * @see https://developer.mozilla.org/en-US/docs/Web/Manifest/display
@@ -355,7 +367,19 @@ export interface ManifestOptions {
     src: string
     sizes: string
     label?: string
-    platform?: 'android' | 'ios' | 'kaios' | 'macos' | 'windows' | 'windows10x' | 'chrome_web_store' | 'play' | 'itunes' | 'microsoft-inbox' | 'microsoft-store' | string
+    platform?:
+      | 'android'
+      | 'ios'
+      | 'kaios'
+      | 'macos'
+      | 'windows'
+      | 'windows10x'
+      | 'chrome_web_store'
+      | 'play'
+      | 'itunes'
+      | 'microsoft-inbox'
+      | 'microsoft-store'
+      | string
     form_factor?: 'narrow' | 'wide'
     type?: string
   }[]
@@ -484,7 +508,9 @@ export interface VitePluginPWAAPI {
   generateSW(): Promise<void>
 }
 
-export type ExtendManifestEntriesHook = (manifestEntries: (string | ManifestEntry)[]) => (string | ManifestEntry)[] | undefined
+export type ExtendManifestEntriesHook = (
+  manifestEntries: (string | ManifestEntry)[]
+) => (string | ManifestEntry)[] | undefined
 
 /**
  * Development options.

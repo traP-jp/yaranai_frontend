@@ -7,24 +7,20 @@ console.log(pwaInfo)
 // replaced dyanmicaly
 const reloadSW: any = '__RELOAD_SW__'
 
-const {
-  offlineReady,
-  needRefresh,
-  updateServiceWorker,
-} = useRegisterSW({
+const { offlineReady, needRefresh, updateServiceWorker } = useRegisterSW({
   immediate: true,
   onRegisteredSW(swUrl, r) {
     console.log(`Service Worker at: ${swUrl}`)
     if (reloadSW === 'true') {
-      r && setInterval(async () => {
-        console.log('Checking for sw update')
-        await r.update()
-      }, 20000 /* 20s for testing purposes */)
-    }
-    else {
+      r &&
+        setInterval(async () => {
+          console.log('Checking for sw update')
+          await r.update()
+        }, 20000 /* 20s for testing purposes */)
+    } else {
       console.log(`SW Registered: ${r}`)
     }
-  },
+  }
 })
 
 async function close() {
@@ -34,25 +30,13 @@ async function close() {
 </script>
 
 <template>
-  <div
-    v-if="offlineReady || needRefresh"
-    class="pwa-toast"
-    role="alert"
-  >
+  <div v-if="offlineReady || needRefresh" class="pwa-toast" role="alert">
     <div class="message">
-      <span v-if="offlineReady">
-        App ready to work offline
-      </span>
-      <span v-else>
-        New content available, click on reload button to update.
-      </span>
+      <span v-if="offlineReady"> App ready to work offline </span>
+      <span v-else> New content available, click on reload button to update. </span>
     </div>
-    <button v-if="needRefresh" @click="updateServiceWorker()">
-      Reload
-    </button>
-    <button @click="close">
-      Close
-    </button>
+    <button v-if="needRefresh" @click="updateServiceWorker()">Reload</button>
+    <button @click="close">Close</button>
   </div>
 </template>
 
