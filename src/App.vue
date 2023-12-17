@@ -1,9 +1,11 @@
 <script setup lang="ts">
 import { RouterView } from 'vue-router'
+import ReloadPrompt from '@/components/ReloadPrompt.vue'
 </script>
 
 <template>
   <RouterView />
+  <reload-prompt />
 </template>
 
 <style scoped>

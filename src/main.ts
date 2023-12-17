@@ -15,6 +15,21 @@ const vuetify = createVuetify({
   directives
 })
 
+//
+import { useRegisterSW } from 'virtual:pwa-register/vue'
+
+const intervalMS = 60 * 60 * 1000
+
+const updateServiceWorker = useRegisterSW({
+  onRegistered(r) {
+    r &&
+      setInterval(() => {
+        r.update()
+      }, intervalMS)
+  },
+  onOfflineReady() {}
+})
+
 const app = createApp(App)
 
 app.use(router)
