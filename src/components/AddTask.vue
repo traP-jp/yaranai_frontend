@@ -34,14 +34,14 @@ const sendNewTask = () => {
       <v-text-field
         label="タスク名"
         placeholder="タスク名をここに入力"
-        :v-model="newTask.title"
+        v-model="newTask.title"
       ></v-text-field>
     </div>
     <div>
       <v-text-field
         label="概要"
         placeholder="概要をここに入力"
-        :v-model="newTask.description"
+        v-model="newTask.description"
       ></v-text-field>
     </div>
     <div>
