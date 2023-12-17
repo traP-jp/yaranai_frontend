@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import apiClient from '@/apis'
-import router from '@/router';
+import router from '@/router'
 import { ref } from 'vue'
 
 const conditionReq = ref<{ name: string }>({ name: '' })
