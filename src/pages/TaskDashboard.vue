@@ -134,13 +134,15 @@ const chageSuggestion = () => {
 </template>
 
 <style lang="scss" scoped>
+@import '../assets/base.scss';
+
 .pageContainer {
   display: flex;
   justify-content: space-around;
 }
 
 h1 {
-  color: #000;
+  color: var(--color-text);
   font-size: 90px;
   font-style: normal;
   font-weight: 700;

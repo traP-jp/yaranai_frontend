@@ -8,17 +8,17 @@ const router = createRouter({
   routes: [
     {
       path: '/',
-      name: 'home',
+      name: 'TaskDashboard',
       component: TaskDashboard
     },
     {
       path: '/AddTask',
-      name: 'タスクの追加',
+      name: 'AddTask',
       component: AddTask
     },
     {
       path: '/AddCondition',
-      name: '状況の追加',
+      name: 'AddCondition',
       component: AddCondition
     }
   ]
