@@ -44,7 +44,7 @@ export default defineConfig({
       },
       includeAssets: ['favicon.ico', 'logo.svg'],
       devOptions: {
-        enabled: true,
+        enabled: false,
         suppressWarnings: true
       },
       srcDir: 'src',
