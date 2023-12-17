@@ -3,207 +3,18 @@ import { ref } from 'vue'
 import TaskList from '@/components/TaskList.vue'
 import apiClient from '../apis/index'
 import type { tasks } from '../apis/generated'
+import router from '@/router';
 
-const taskLista = ref<tasks>([
-  {
-    id: 1,
-    title: '電磁気学の課題',
-    condition: 998244353,
-    difficulty: 2,
-    dueDate: '2021-10-10',
-    description: 'やる'
-  },
-  {
-    id: 2,
-    title: '単位認定の申請',
-    condition: 5,
-    difficulty: 3,
-    dueDate: '2021-10-10',
-    description: 'スコアレポートを提出'
-  },
-  {
-    id: 3,
-    title: '単位認定の申請',
-    condition: 5,
-    difficulty: 1,
-    dueDate: '2021-10-10',
-    description: 'スコアレポートを提出'
-  },
-  {
-    id: 1,
-    title: '電磁気学の課題',
-    condition: 998244353,
-    difficulty: 2,
-    dueDate: '2021-10-10',
-    description: 'やる'
-  },
-  {
-    id: 2,
-    title: '単位認定の申請',
-    condition: 5,
-    difficulty: 3,
-    dueDate: '2021-10-10',
-    description: 'スコアレポートを提出'
-  },
-  {
-    id: 3,
-    title: '単位認定の申請',
-    condition: 5,
-    difficulty: 1,
-    dueDate: '2021-10-10',
-    description: 'スコアレポートを提出'
-  },
-  {
-    id: 1,
-    title: '電磁気学の課題',
-    condition: 998244353,
-    difficulty: 2,
-    dueDate: '2021-10-10',
-    description: 'やる'
-  },
-  {
-    id: 2,
-    title: '単位認定の申請',
-    condition: 5,
-    difficulty: 3,
-    dueDate: '2021-10-10',
-    description: 'スコアレポートを提出'
-  },
-  {
-    id: 3,
-    title: '単位認定の申請',
-    condition: 5,
-    difficulty: 1,
-    dueDate: '2021-10-10',
-    description: 'スコアレポートを提出'
-  },
-  {
-    id: 1,
-    title: '電磁気学の課題',
-    condition: 998244353,
-    difficulty: 2,
-    dueDate: '2021-10-10',
-    description: 'やる'
-  },
-  {
-    id: 2,
-    title: '単位認定の申請',
-    condition: 5,
-    difficulty: 3,
-    dueDate: '2021-10-10',
-    description: 'スコアレポートを提出'
-  },
-  {
-    id: 3,
-    title: '単位認定の申請',
-    condition: 5,
-    difficulty: 1,
-    dueDate: '2021-10-10',
-    description: 'スコアレポートを提出'
-  }
-])
+const taskLista = ref<tasks>([])
 
-const suggest = ref<tasks>([
-  {
-    id: 1,
-    title: '電磁気学の課題',
-    condition: 998244353,
-    difficulty: 2,
-    dueDate: '2021-10-10',
-    description: 'やる'
-  },
-  {
-    id: 2,
-    title: '単位認定の申請',
-    condition: 5,
-    difficulty: 3,
-    dueDate: '2021-10-10',
-    description: 'スコアレポートを提出'
-  },
-  {
-    id: 3,
-    title: '単位認定の申請',
-    condition: 5,
-    difficulty: 1,
-    dueDate: '2021-10-10',
-    description: 'スコアレポートを提出'
-  },
-  {
-    id: 1,
-    title: '電磁気学の課題',
-    condition: 998244353,
-    difficulty: 2,
-    dueDate: '2021-10-10',
-    description: 'やる'
-  },
-  {
-    id: 2,
-    title: '単位認定の申請',
-    condition: 5,
-    difficulty: 3,
-    dueDate: '2021-10-10',
-    description: 'スコアレポートを提出'
-  },
-  {
-    id: 3,
-    title: '単位認定の申請',
-    condition: 5,
-    difficulty: 1,
-    dueDate: '2021-10-10',
-    description: 'スコアレポートを提出'
-  },
-  {
-    id: 1,
-    title: '電磁気学の課題',
-    condition: 998244353,
-    difficulty: 2,
-    dueDate: '2021-10-10',
-    description: 'やる'
-  },
-  {
-    id: 2,
-    title: '単位認定の申請',
-    condition: 5,
-    difficulty: 3,
-    dueDate: '2021-10-10',
-    description: 'スコアレポートを提出'
-  },
-  {
-    id: 3,
-    title: '単位認定の申請',
-    condition: 5,
-    difficulty: 1,
-    dueDate: '2021-10-10',
-    description: 'スコアレポートを提出'
-  },
-  {
-    id: 1,
-    title: '電磁気学の課題',
-    condition: 998244353,
-    difficulty: 2,
-    dueDate: '2021-10-10',
-    description: 'やる'
-  },
-  {
-    id: 2,
-    title: '単位認定の申請',
-    condition: 5,
-    difficulty: 3,
-    dueDate: '2021-10-10',
-    description: 'スコアレポートを提出'
-  },
-  {
-    id: 3,
-    title: '単位認定の申請',
-    condition: 5,
-    difficulty: 1,
-    dueDate: '2021-10-10',
-    description: 'スコアレポートを提出'
-  }
-])
+const suggest = ref<tasks>([])
 
 apiClient.task.getTasks().then((res) => (taskLista.value = res))
 apiClient.suggestion.getSuggest('3').then((res) => (suggest.value = res))
+
+const moveToAddTask = () => {
+  router.push('/AddTask')
+}
 </script>
 
 <template>
@@ -276,7 +87,7 @@ apiClient.suggestion.getSuggest('3').then((res) => (suggest.value = res))
       <!-- <br /> -->
       <br />
     </div>
-    <v-btn>タスクを追加</v-btn>
+    <v-btn @click="moveToAddTask">タスクを追加</v-btn>
     <!-- <br /> -->
     <div class="pageContainer">
       <div>
