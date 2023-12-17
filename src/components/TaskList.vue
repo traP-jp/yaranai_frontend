@@ -42,8 +42,8 @@ h1 {
 }
 .listContainer {
   max: {
-    width: 60vw;
-    height: 30vh;
+    width: 100vw;
+    height: 60vh;
   }
   background-color: white;
   overflow: {
@@ -51,10 +51,21 @@ h1 {
     x: hidden;
   }
   &[horizontalScroll='true'] {
-    width: 60vw;
+    width: 90vw;
     display: flex;
     overflow-x: auto;
     overflow-y: hidden;
   }
+}
+
+::-webkit-scrollbar {
+  width: 7px;
+}
+::-webkit-scrollbar-track {
+  background-color: #ccc;
+}
+::-webkit-scrollbar-thumb {
+  background-color: gray;
+  border-radius: 7px;
 }
 </style>

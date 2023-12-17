@@ -236,9 +236,8 @@ apiClient.suggestion.getSuggest('3').then((res) => (suggest.value = res))
         :difficulty="1"
         :horizontal-scroll="true"
       />
-      <br />
-      <v-btn>やりたくない</v-btn>
     </div>
+    <v-btn>やりたくない</v-btn>
     <br />
     <div class="pageContainer">
       <svg
@@ -311,13 +310,14 @@ apiClient.suggestion.getSuggest('3').then((res) => (suggest.value = res))
 <style lang="scss" scoped>
 .pageContainer {
   display: flex;
+  justify-content: space-around;
 }
 
-h2 {
-  //color: #000;
-  //font-size: 90px;
-  //font-style: normal;
-  //font-weight: 700;
+h1 {
+  color: #000;
+  font-size: 90px;
+  font-style: normal;
+  font-weight: 700;
   line-height: normal;
 }
 
