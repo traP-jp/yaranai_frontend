@@ -15,6 +15,9 @@ apiClient.suggestion.getSuggest('3').then((res) => (suggest.value = res))
 const moveToAddTask = () => {
   router.push('/AddTask')
 }
+const moveToAddCondtion = () => {
+  router.push('/AddCondition')
+}
 </script>
 
 <template>
@@ -87,7 +90,10 @@ const moveToAddTask = () => {
       <!-- <br /> -->
       <br />
     </div>
-    <v-btn @click="moveToAddTask">タスクを追加</v-btn>
+    <div class="pageContainer">
+      <v-btn @click="moveToAddCondtion">状況を追加</v-btn>
+      <v-btn @click="moveToAddTask">タスクを追加</v-btn>
+    </div>
     <!-- <br /> -->
     <div class="pageContainer">
       <div>
