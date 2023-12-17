@@ -3,7 +3,7 @@ import { ref } from 'vue'
 import TaskList from '@/components/TaskList.vue'
 import apiClient from '../apis/index'
 import type { tasks } from '../apis/generated'
-import router from '@/router';
+import router from '@/router'
 
 const taskLista = ref<tasks>([])
 
