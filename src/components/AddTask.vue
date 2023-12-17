@@ -8,26 +8,33 @@ const newTask = ref<taskWithoutId>({
   description: '',
   condition: 0,
   difficulty: 0,
-  dueDate: ''
+  dueDate: '2020-10-15'
 })
 
-const conditionList = ref<conditions>([
-  { id: 0, name: 'aaa' },
-  { id: 1, name: 'ddd' },
-  { id: 2, name: 'fff' },
-  { id: 3, name: 'aaggga' },
-  { id: 4, name: 'aahha' },
-  { id: 5, name: 'aaja' }
-])
+const date = ref<Date>()
+
+const conditionList = ref<conditions>([])
 
 apiClient.condition.getConditions().then((res) => (conditionList.value = res))
 
 const sendNewTask = () => {
   apiClient.task.postTasks(newTask.value)
 }
+
+const format = () => {
+  if (date.value != undefined) {
+    newTask.value.dueDate =
+      date.value.getFullYear().toString() +
+      '-' +
+      date.value.getMonth().toString() +
+      '-' +
+      date.value.getDate().toString()
+  }
+}
 </script>
 
 <template>
+  <router-link :to="{ name: 'TaskDashboard' }">戻る</router-link>
   <v-card width="60vw">
     <v-card-title>新しいタスクを追加する</v-card-title>
     <div>
@@ -56,7 +63,7 @@ const sendNewTask = () => {
       </v-radio-group>
     </div>
     <div>
-      <p>締め切り</p>
+      <v-date-picker v-model="date" @update:model-value="format" />
     </div>
     <v-btn @click="sendNewTask">送信する</v-btn>
   </v-card>
