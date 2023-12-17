@@ -19,10 +19,10 @@ const moveToAddCondtion = () => {
   router.push('/AddCondition')
 }
 
-var BottunStatus: boolean = false
+var ButtonStatus: boolean = false
 const chageSuggestion = () => {
   if (difficulty.value === 1) {
-    BottunStatus = true
+    ButtonStatus = true
   } else {
     difficulty.value = difficulty.value - 1
   }
@@ -60,7 +60,7 @@ const chageSuggestion = () => {
         :horizontal-scroll="true"
       />
     </div>
-    <v-btn @click="chageSuggestion" v-bind:disabled="BottunStatus">やりたくない</v-btn>
+    <v-btn @click="chageSuggestion" v-bind:disabled="ButtonStatus">やりたくない</v-btn>
     <br />
     <div class="pageContainer">
       <svg
