@@ -8,15 +8,24 @@ import router from '@/router'
 const taskLista = ref<tasks>([])
 
 const suggest = ref<tasks>([])
-
+const difficulty = ref(3)
 apiClient.task.getTasks().then((res) => (taskLista.value = res))
-apiClient.suggestion.getSuggest('3').then((res) => (suggest.value = res))
+apiClient.suggestion.getSuggest(difficulty.value.toString()).then((res) => (suggest.value = res))
 
 const moveToAddTask = () => {
   router.push('/AddTask')
 }
 const moveToAddCondtion = () => {
   router.push('/AddCondition')
+}
+
+var BottunStatus: boolean = false
+const chageSuggestion = () => {
+  if (difficulty.value === 1) {
+    BottunStatus = true
+  } else {
+    difficulty.value = difficulty.value - 1
+  }
 }
 </script>
 
@@ -51,7 +60,7 @@ const moveToAddCondtion = () => {
         :horizontal-scroll="true"
       />
     </div>
-    <v-btn>やりたくない</v-btn>
+    <v-btn @click="chageSuggestion" v-bind:disabled="BottunStatus">やりたくない</v-btn>
     <br />
     <div class="pageContainer">
       <svg
