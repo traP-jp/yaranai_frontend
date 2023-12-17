@@ -10,9 +10,9 @@ export default defineConfig({
     vue(),
     VitePWA({
       base: '/',
-      strategies:'injectManifest',
+      strategies: 'injectManifest',
       registerType: 'autoUpdate',
-      injectRegister:null,
+      injectRegister: null,
       manifest: {
         name: 'yaranai',
         short_name: 'yaranai',
@@ -20,7 +20,7 @@ export default defineConfig({
         icons: [
           {
             src: '/favicon.ico',
-            sizes: '192x192',
+            sizes: '32x32',
             type: 'image/png'
           }
         ], // あとで追加します
@@ -44,7 +44,8 @@ export default defineConfig({
       },
       includeAssets: ['favicon.ico', 'logo.svg'],
       devOptions: {
-        enabled: true
+        enabled: true,
+        suppressWarnings: true
       },
       srcDir: 'src',
       filename: 'sw.ts'
