@@ -101,12 +101,18 @@ const changeSuggestion = () => {
       />
       <br />
     </div>
-    <div class="pageContainer">
-      <v-btn @click="moveToAddCondition">状況を追加</v-btn>
-      <v-btn @click="moveToConditionList">状況の削除</v-btn>
-      <v-btn @click="moveToAddTask">タスクを追加</v-btn>
+    <div style="display: block; overflow-wrap: break-word">
+      <div>
+        <v-btn @click="moveToAddCondition">状況を追加</v-btn>
+      </div>
+      <div>
+        <v-btn @click="moveToConditionList">状況の削除</v-btn>
+      </div>
+      <div>
+        <v-btn @click="moveToAddTask">タスクを追加</v-btn>
+      </div>
     </div>
-    <div class="pageContainer">
+    <div class="listContainer">
       <div>
         <task-list
           :title="'ハードルが低い'"
@@ -161,5 +167,11 @@ button {
   border-radius: 100vh;
   font-size: 18px;
   font-family: inherit;
+}
+
+.listContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px;
 }
 </style>

@@ -57,13 +57,13 @@ const format = () => {
           v-model="newTask.description"
         ></v-text-field>
       </div>
-      <v-radio-group type="a" label="ハードルの設定" v-model="newTask.difficulty">
+      <v-radio-group type="a" label="ハードルの設定" v-model="newTask.difficulty" inline>
         <span v-for="item in difficultylist" :key="item.id">
           <v-radio :label="`${item.name}`" color="black" :multiple="false" :value="item.id" />
         </span>
       </v-radio-group>
       <div>
-        <v-radio-group type="a" label="状況" v-model="newTask.condition">
+        <v-radio-group type="a" label="状況" v-model="newTask.condition" inline>
           <span v-for="item in conditionList" :key="item.id">
             <v-radio :label="`${item.name}`" color="black" :multiple="false" :value="item.id" />
           </span>
