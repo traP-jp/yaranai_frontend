@@ -96,14 +96,12 @@ const changeSuggestion = () => {
         :difficulty="1"
         :horizontal-scroll="true"
       />
-      <!-- <br /> -->
       <br />
     </div>
     <div class="pageContainer">
       <v-btn @click="moveToAddCondition">状況を追加</v-btn>
       <v-btn @click="moveToAddTask">タスクを追加</v-btn>
     </div>
-    <!-- <br /> -->
     <div class="pageContainer">
       <div>
         <task-list
