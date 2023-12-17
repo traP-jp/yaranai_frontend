@@ -11,6 +11,11 @@ const newTask = ref<taskWithoutId>({
   dueDate: ''
 })
 
+const difficultylist = [
+  { id: 0, name: 'ハードルが低い' },
+  { id: 1, name: 'ハードルが普通' },
+  { id: 2, name: 'ハードルが高い' }
+]
 const conditionList = ref<conditions>([
   { id: 0, name: 'aaa' },
   { id: 1, name: 'ddd' },
@@ -44,12 +49,13 @@ const sendNewTask = () => {
         v-model="newTask.description"
       ></v-text-field>
     </div>
-    <div>
-      <p>ハードル</p>
-    </div>
+    <v-radio-group type="a" label="ハードルの設定" v-model="newTask.difficulty">
+      <span v-for="item in difficultylist" :key="item.id">
+        <v-radio :label="`${item.name}`" color="black" :multiple="false" :value="item.id" />
+      </span>
+    </v-radio-group>
     <div>
       <v-radio-group type="a" label="状況" v-model="newTask.condition">
-        選択中の状況：{{ newTask.condition }}
         <span v-for="item in conditionList" :key="item.id">
           <v-radio :label="`${item.name}`" color="black" :multiple="false" :value="item.id" />
         </span>
