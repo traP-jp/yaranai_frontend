@@ -24,7 +24,7 @@ export default defineConfig({
             type: 'image/png'
           }
         ], // あとで追加します
-        start_url: 'index.html',
+        start_url: '/',
         display: 'standalone', // デフォルトなので不要
         background_color: '#ffffff',
         theme_color: '#ffffff',
