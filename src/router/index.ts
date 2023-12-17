@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import TaskDashboard from '@/pages/TaskDashboard.vue'
 import AddTask from '@/components/AddTask.vue'
 import AddCondition from '@/components/AddCondition.vue'
+import { mergeProps } from 'vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
