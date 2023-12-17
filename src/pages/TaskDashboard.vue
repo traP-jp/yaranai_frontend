@@ -15,16 +15,16 @@ apiClient.suggestion.getSuggest(difficulty.value.toString()).then((res) => (sugg
 const moveToAddTask = () => {
   router.push('/AddTask')
 }
-const moveToAddCondtion = () => {
+const moveToAddCondition = () => {
   router.push('/AddCondition')
 }
 
-var ButtonStatus: boolean = false
-const chageSuggestion = () => {
+const ButtonStatus = ref(false)
+const changeSuggestion = () => {
   if (difficulty.value === 1) {
-    ButtonStatus = true
+    ButtonStatus.value = true
   } else {
-    difficulty.value = difficulty.value - 1
+    difficulty.value--
   }
 }
 </script>
@@ -60,7 +60,7 @@ const chageSuggestion = () => {
         :horizontal-scroll="true"
       />
     </div>
-    <v-btn @click="chageSuggestion" v-bind:disabled="ButtonStatus">やりたくない</v-btn>
+    <v-btn @click="changeSuggestion" v-bind:disabled="ButtonStatus">やりたくない</v-btn>
     <br />
     <div class="pageContainer">
       <svg
@@ -96,14 +96,12 @@ const chageSuggestion = () => {
         :difficulty="1"
         :horizontal-scroll="true"
       />
-      <!-- <br /> -->
       <br />
     </div>
     <div class="pageContainer">
-      <v-btn @click="moveToAddCondtion">状況を追加</v-btn>
+      <v-btn @click="moveToAddCondition">状況を追加</v-btn>
       <v-btn @click="moveToAddTask">タスクを追加</v-btn>
     </div>
-    <!-- <br /> -->
     <div class="pageContainer">
       <div>
         <task-list

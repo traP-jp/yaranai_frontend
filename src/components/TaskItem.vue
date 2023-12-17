@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import apiClient from '@/apis'
 import type { task } from '../apis/generated'
 const props = defineProps<{
   cont: task
@@ -7,7 +8,7 @@ const props = defineProps<{
 
 <template>
   <div class="container">
-    <div class="checkmark" onclick="console.log('あとでHTTPリクエストを送る')">✓</div>
+    <div class="checkmark" @click="apiClient.task.deleteTask(props.cont.id)">✓</div>
     <div class="title">
       {{ props.cont.title }}
     </div>
