@@ -50,14 +50,12 @@ const sendNewTask = () => {
       ></v-text-field>
     </div>
     <v-radio-group type="a" label="ハードルの設定" v-model="newTask.difficulty">
-      選択中のハードル：{{ newTask.difficulty }}
       <span v-for="item in difficultylist" :key="item.id">
         <v-radio :label="`${item.name}`" color="black" :multiple="false" :value="item.id" />
       </span>
     </v-radio-group>
     <div>
       <v-radio-group type="a" label="状況" v-model="newTask.condition">
-        選択中の状況：{{ newTask.condition }}
         <span v-for="item in conditionList" :key="item.id">
           <v-radio :label="`${item.name}`" color="black" :multiple="false" :value="item.id" />
         </span>
