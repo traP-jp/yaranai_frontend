@@ -11,7 +11,7 @@ const props = defineProps<{
 
 <template>
   <div>
-    <h1>{{ props.title }}</h1>
+    <h2>{{ props.title }}</h2>
     <div class="listContainer" :horizontalScroll="`${horizontalScroll}`">
       <div v-for="item in props.taskList" :key="item.id">
         <div v-if="item.difficulty === props.difficulty">
@@ -35,7 +35,7 @@ const props = defineProps<{
 //   background-color: white;
 //   overflow-x: hidden;
 // }
-h1 {
+h2 {
   background-color: white;
   font-style: normal;
   line-height: normal;

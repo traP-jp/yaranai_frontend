@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import apiClient from '@/apis'
-import type { conditions, difficulty, taskWithoutId } from '@/apis/generated'
+import type { conditions, taskWithoutId } from '@/apis/generated'
 import { ref } from 'vue'
 
 const newTask = ref<taskWithoutId>({
@@ -11,11 +11,11 @@ const newTask = ref<taskWithoutId>({
   dueDate: ''
 })
 
-const difficultylist = ref<difficulty>([
+const difficultylist = [
   { id: 0, name: 'ハードルが低い' },
   { id: 1, name: 'ハードルが普通' },
   { id: 2, name: 'ハードルが高い' }
-])
+]
 const conditionList = ref<conditions>([
   { id: 0, name: 'aaa' },
   { id: 1, name: 'ddd' },
