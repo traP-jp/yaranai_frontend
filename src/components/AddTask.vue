@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import apiClient from '@/apis'
-import type { conditions, taskWithoutId } from '@/apis/generated'
+import type { conditions, difficulty, taskWithoutId } from '@/apis/generated'
 import { ref } from 'vue'
 
 const newTask = ref<taskWithoutId>({
@@ -11,6 +11,11 @@ const newTask = ref<taskWithoutId>({
   dueDate: ''
 })
 
+const difficultylist = ref<difficulty>([
+  { id: 0, name: 'ハードルが低い' },
+  { id: 1, name: 'ハードルが普通' },
+  { id: 2, name: 'ハードルが高い' }
+])
 const conditionList = ref<conditions>([
   { id: 0, name: 'aaa' },
   { id: 1, name: 'ddd' },
@@ -44,9 +49,12 @@ const sendNewTask = () => {
         v-model="newTask.description"
       ></v-text-field>
     </div>
-    <div>
-      <p>ハードル</p>
-    </div>
+    <v-radio-group type="a" label="ハードルの設定" v-model="newTask.difficulty">
+      選択中のハードル：{{ newTask.difficulty }}
+      <span v-for="item in difficultylist" :key="item.id">
+        <v-radio :label="`${item.name}`" color="black" :multiple="false" :value="item.id" />
+      </span>
+    </v-radio-group>
     <div>
       <v-radio-group type="a" label="状況" v-model="newTask.condition">
         選択中の状況：{{ newTask.condition }}
