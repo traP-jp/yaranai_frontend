@@ -18,6 +18,9 @@ const moveToAddTask = () => {
 const moveToAddCondition = () => {
   router.push('/AddCondition')
 }
+const moveToConditionList = () => {
+  router.push('/conditionList')
+}
 
 const ButtonStatus = ref(false)
 const changeSuggestion = () => {
@@ -100,6 +103,7 @@ const changeSuggestion = () => {
     </div>
     <div class="pageContainer">
       <v-btn @click="moveToAddCondition">状況を追加</v-btn>
+      <v-btn @click="moveToConditionList">状況の削除</v-btn>
       <v-btn @click="moveToAddTask">タスクを追加</v-btn>
     </div>
     <div class="pageContainer">
