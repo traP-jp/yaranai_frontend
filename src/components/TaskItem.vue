@@ -24,6 +24,8 @@ const props = defineProps<{
 </template>
 
 <style lang="scss" scoped>
+@import '../assets/base.scss';
+
 .title {
   font-size: 18px;
   width: 150px;
@@ -35,7 +37,6 @@ const props = defineProps<{
   height: 30px;
   text-align: center;
   border-radius: 50%;
-  /*border: 1px solid rgba(0, 0, 0, 0.3);*/
 }
 .checkmark:hover {
   background-color: rgba(0, 0, 0, 0.3);
@@ -47,7 +48,7 @@ const props = defineProps<{
   flex-direction: column;
   justify-content: center;
   flex-shrink: 0;
-  color: #000;
+  color: var(--color-text);
   border-radius: 6px;
   background: rgba(0, 0, 0, 0.1);
 }
@@ -65,7 +66,7 @@ const props = defineProps<{
   height: auto;
   border: 5px;
   box-shadow: 5px;
-  background-color: white;
+  background-color: var(--color-background);
   padding: auto;
   padding-left: 20px;
   border-radius: 6px;

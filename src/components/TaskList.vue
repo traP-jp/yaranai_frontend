@@ -23,35 +23,28 @@ const props = defineProps<{
 </template>
 
 <style lang="scss" scoped>
-// .horizonScroll {
-//   width: 300px;
-//   height: 150px;
-//   background-color: white;
-//   overflow-y: hidden;
-// }
-// .verticalScroll {
-//   width: 500px;
-//   height: 460px;
-//   background-color: white;
-//   overflow-x: hidden;
-// }
+@import '../assets/base.scss';
+
 h2 {
-  background-color: white;
+  background-color: var(--color-background-soft);
   font-style: normal;
   line-height: normal;
 }
 .listContainer {
+  width: 30vw;
+  height: fit-content;
   max: {
     width: 100vw;
-    height: 60vh;
+    height: 40vh;
   }
-  background-color: white;
+  background-color: var(--color-background-soft);
   overflow: {
     y: auto;
     x: hidden;
   }
   &[horizontalScroll='true'] {
     width: 90vw;
+    height: fit-content;
     display: flex;
     overflow-x: auto;
     overflow-y: hidden;
