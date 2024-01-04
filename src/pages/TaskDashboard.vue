@@ -49,7 +49,7 @@ const changeSuggestion = () => {
     <br />
     <div class="pageContainer">
       <img src="../assets/icon-park-outline_caution.svg" />
-      
+
       <task-list
         :title="'未設定項目のあるタスク'"
         :task-list="taskLista"
