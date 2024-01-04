@@ -36,7 +36,7 @@ jobs:
         run: npm ci
         working-directory: ./
       - name: Run fmt
-        run: npm run fmt:check
+        run: npm run fmt
         working-directory: ./
   lint:
     name: Run lint
